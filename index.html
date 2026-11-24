@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ri:think | Business planning for early-stage CPG founders</title>
+<meta name="description" content="Demand, cash and inventory visibility for early-stage CPG brands, priced on the results we deliver. Apply for the ri:think pilot cohort.">
+<link rel="canonical" href="https://rithink.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ri:think | Business planning for early-stage CPG founders">
+<meta property="og:description" content="Demand, cash and inventory visibility for early-stage CPG brands, priced on the results we deliver.">
+<meta property="og:url" content="https://rithink.io/">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23ffffff'/%3E%3Ccircle cx='32' cy='21' r='6.5' fill='%23001489'/%3E%3Ccircle cx='32' cy='43' r='6.5' fill='%23001489'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Layout idea: one strict left-aligned column on a hairline grid; big narrow type does the talking. */
+  --ink: #111111;
+  --paper: #ffffff;
+  --off: #F7F7F7;
+  --blue: #001489;
+  --blue-hover: #000F66;
+  --muted: #4B4B4B;
+  --line: rgba(17, 17, 17, 0.14);
+  --font: "National 2 Narrow", "Inter Tight", "Instrument Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --gutter: clamp(20px, 5vw, 48px);
+  --max: 1120px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 18px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { text-wrap: balance; letter-spacing: -0.02em; line-height: 1.05; font-weight: 600; }
+p { text-wrap: pretty; }
+a { color: var(--blue); text-underline-offset: 3px; }
+a:hover { color: var(--blue-hover); }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding-inline: var(--gutter); }
+section { padding-block: clamp(64px, 11vw, 128px); }
+.alt { background: var(--off); }
+.eyebrow { font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+h2 { font-size: clamp(32px, 6.4vw, 56px); max-width: 16ch; }
+
+/* wordmark */
+.wordmark { font-weight: 700; letter-spacing: -0.03em; color: var(--ink); text-decoration: none; font-size: 26px; line-height: 1; }
+.wordmark .colon { color: var(--blue); animation: flash 1.4s steps(1, end) infinite; }
+@keyframes flash { 0%, 55% { opacity: 1; } 56%, 100% { opacity: 0.12; } }
+.wordmark:hover { color: var(--ink); }
+
+/* buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 52px; padding: 0 28px;
+  background: var(--blue); color: #fff;
+  font: inherit; font-weight: 600; font-size: 18px; letter-spacing: -0.005em;
+  border: 0; border-radius: 2px; text-decoration: none; cursor: pointer;
+  transition: background-color .15s ease;
+}
+.btn:hover { background: var(--blue-hover); color: #fff; }
+.btn.small { min-height: 42px; padding: 0 18px; font-size: 16px; }
+.link-arrow { font-weight: 600; text-decoration: none; border-bottom: 2px solid currentColor; padding-bottom: 2px; }
+
+/* header */
+header.top { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 64px; gap: 16px; }
+
+/* hero */
+.hero { padding-block: clamp(56px, 10vw, 120px) clamp(64px, 11vw, 120px); }
+.hero h1 { font-size: clamp(44px, 10.5vw, 104px); max-width: 13ch; font-weight: 600; letter-spacing: -0.035em; line-height: 0.98; }
+.hero .sub { margin-top: 28px; font-size: clamp(20px, 3.4vw, 28px); line-height: 1.3; max-width: 30ch; color: var(--ink); }
+.hero .actions { margin-top: 36px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px 32px; }
+
+/* problem cards */
+.cards { display: grid; gap: 20px; margin-top: 48px; }
+.card { background: var(--paper); border: 1px solid var(--line); padding: 28px 24px 32px; }
+.card h3 { font-size: 28px; margin-bottom: 12px; }
+.card p { color: var(--muted); }
+.card .tag { display: block; font-size: 14px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); margin-bottom: 20px; }
+
+/* dark band: white text only, no blue */
+.band { background: var(--ink); color: #fff; padding-block: clamp(72px, 12vw, 144px); }
+.band p { font-size: clamp(32px, 7vw, 72px); line-height: 1.04; letter-spacing: -0.03em; font-weight: 600; max-width: 18ch; text-wrap: balance; }
+
+/* steps */
+.steps { list-style: none; padding: 0; margin: 48px 0 0; display: grid; gap: 0; counter-reset: s; border-top: 1px solid var(--ink); }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 48px 1fr; gap: 8px 16px; padding: 28px 0; border-bottom: 1px solid var(--line); font-size: clamp(20px, 3.2vw, 26px); line-height: 1.25; letter-spacing: -0.01em; }
+.steps li::before { content: counter(s); color: var(--blue); font-weight: 700; font-size: 28px; line-height: 1; }
+
+/* included */
+.items { list-style: none; padding: 0; margin: 48px 0 0; display: grid; gap: 0; border-top: 1px solid var(--ink); }
+.items li { display: grid; grid-template-columns: 40px 1fr; gap: 4px 16px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+.items svg { width: 28px; height: 28px; stroke: var(--blue); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; margin-top: 2px; }
+.items h3 { font-size: 24px; letter-spacing: -0.015em; line-height: 1.15; }
+.items p { color: var(--muted); grid-column: 2; }
+
+/* founder */
+.founder { display: grid; gap: 40px; }
+.photo { aspect-ratio: 4 / 5; background: var(--off); border: 1px solid var(--line); display: grid; place-items: center; text-align: center; padding: 24px; color: var(--muted); font-size: 16px; max-width: 360px; width: 100%; }
+.founder h2 { max-width: none; }
+.founder .role { margin-top: 8px; color: var(--muted); font-size: 20px; }
+.facts { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.facts li { padding: 16px 0; border-bottom: 1px solid var(--line); max-width: 52ch; }
+
+/* status */
+.status { border-left: 4px solid var(--blue); padding: 4px 0 4px 20px; font-size: clamp(20px, 3.4vw, 28px); line-height: 1.3; letter-spacing: -0.01em; max-width: 34ch; margin-top: 56px; }
+
+/* apply */
+#apply .lead { margin-top: 20px; max-width: 40ch; color: var(--muted); }
+form { margin-top: 40px; display: grid; gap: 22px; max-width: 640px; }
+.field { display: grid; gap: 8px; }
+label { font-weight: 600; font-size: 17px; }
+input, select, textarea {
+  font: inherit; font-size: 18px; color: var(--ink); background: var(--paper);
+  border: 1px solid #8A8A8A; border-radius: 2px; padding: 12px 14px; min-height: 52px; width: 100%;
+}
+textarea { min-height: 132px; resize: vertical; line-height: 1.4; }
+input:focus, select:focus, textarea:focus { outline: 3px solid var(--blue); outline-offset: 1px; border-color: var(--blue); }
+.hint { font-size: 15px; color: var(--muted); }
+.msg { min-height: 1.5em; font-size: 16px; }
+.msg.err { color: #9A1B1B; }
+.msg.ok { color: var(--ink); font-weight: 600; }
+form .btn { justify-self: start; }
+
+/* footer */
+footer { background: var(--off); border-top: 1px solid var(--line); padding-block: 48px 56px; font-size: 16px; }
+footer .wrap { display: grid; gap: 28px; }
+footer .cols { display: grid; gap: 8px; color: var(--muted); }
+footer .ph { color: var(--ink); }
+
+/* motion */
+.fade.pre { opacity: 0; transform: translateY(12px); }
+.fade { transition: opacity .6s ease, transform .6s ease; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .fade, .fade.pre { opacity: 1; transform: none; transition: none; }
+  .btn { transition: none; }
+  .wordmark .colon { animation: none; }
+}
+
+/* wider screens */
+@media (min-width: 760px) {
+  .cards { grid-template-columns: repeat(3, 1fr); }
+  .steps { grid-template-columns: repeat(3, 1fr); border-top: 0; gap: 32px; }
+  .steps li { grid-template-columns: 1fr; border-top: 1px solid var(--ink); border-bottom: 0; padding: 20px 0 0; gap: 20px; }
+  .items { grid-template-columns: repeat(2, 1fr); column-gap: 48px; }
+  .items li { grid-template-columns: 40px 1fr; }
+  .founder { grid-template-columns: 360px 1fr; gap: 64px; align-items: start; }
+  footer .wrap { grid-template-columns: 1fr 1fr; align-items: start; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="wordmark" href="#top" aria-label="ri:think home">ri<span class="colon">:</span>think</a>
+    <a class="btn small" href="#apply">Apply for the pilot</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="fade">Business planning for founders, not finance teams.</h1>
+      <p class="sub fade">Demand, cash and inventory visibility for early-stage CPG brands, priced on the results we deliver.</p>
+      <div class="actions fade">
+        <a class="btn" href="#apply">Apply for the pilot</a>
+        <a class="link-arrow" href="#how">How it works</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="problem" aria-labelledby="problem-h">
+    <div class="wrap">
+      <p class="eyebrow">The problem</p>
+      <h2 id="problem-h" class="fade">You are planning a retail business on a DTC spreadsheet.</h2>
+      <div class="cards">
+        <article class="card fade">
+          <span class="tag">Demand</span>
+          <h3>Guessing at forecasts.</h3>
+          <p>Retail volumes do not behave like your webshop, and the spreadsheet cannot tell you why.</p>
+        </article>
+        <article class="card fade">
+          <span class="tag">Cash</span>
+          <h3>Payment terms nobody models.</h3>
+          <p>Nobody models 60-90 day retailer payment terms and seasonal stock builds.</p>
+        </article>
+        <article class="card fade">
+          <span class="tag">Tools</span>
+          <h3>Software built for big firms.</h3>
+          <p>Enterprise planning software costs six figures and needs a team to run.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="band" role="presentation">
+    <div class="wrap">
+      <p class="fade">Growth does not solve the cash problem. It can accelerate it.</p>
+    </div>
+  </div>
+
+  <section id="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <p class="eyebrow">How it works</p>
+      <h2 id="how-h" class="fade">Three steps. No software to learn.</h2>
+      <ol class="steps">
+        <li class="fade">Connect your sales, stock and finance data.</li>
+        <li class="fade">We build and run your plan: forecast, cash cycle, S&amp;OP.</li>
+        <li class="fade">You pay based on measured results, not a software licence.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="alt" id="included" aria-labelledby="inc-h">
+    <div class="wrap">
+      <p class="eyebrow">What's included</p>
+      <h2 id="inc-h" class="fade">Six things a growing brand needs to see.</h2>
+      <ul class="items">
+        <li class="fade">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18"/><path d="M4 16l5-5 4 3 7-8"/></svg>
+          <h3>Demand forecasting</h3>
+          <p>A forecast built from your own sales, by channel and by retailer.</p>
+        </li>
+        <li class="fade">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="1"/><circle cx="12" cy="12" r="2.5"/></svg>
+          <h3>Cash cycle modelling</h3>
+          <p>Payment terms and stock builds mapped week by week, so you see the dip before it lands.</p>
+        </li>
+        <li class="fade">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5"/><path d="M12 12v9"/></svg>
+          <h3>Inventory intelligence</h3>
+          <p>What to make and what to order, and when, against the cash you can afford to hold.</p>
+        </li>
+        <li class="fade">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5"/><path d="M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-14 5"/><path d="M4 20v-4h4"/></svg>
+          <h3>S&amp;OP planning</h3>
+          <p>One rhythm that puts sales, operations and finance on the same page.</p>
+        </li>
+        <li class="fade">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20v-7"/><path d="M12 20V5"/><path d="M19 20v-10"/><path d="M3 20h18"/></svg>
+          <h3>Category intelligence</h3>
+          <p>Where your category is growing and shrinking in the channels you are moving into.</p>
+        </li>
+        <li class="fade">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5"/><path d="M9 13h7"/><path d="M9 17h5"/></svg>
+          <h3>Investor-ready reporting</h3>
+          <p>Plans and reports in the shape investors and lenders expect to see.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- founder-slot -->
+
+  <section id="status" style="padding-block:clamp(48px,8vw,88px)" aria-label="Status">
+    <div class="wrap">
+      <p class="status fade" style="margin-top:0">Early stage. Working components are running on a live food brand, and we're opening a small pilot cohort.</p>
+    </div>
+  </section>
+
+  <section class="alt" id="apply" aria-labelledby="apply-h">
+    <div class="wrap">
+      <p class="eyebrow">Pilot cohort</p>
+      <h2 id="apply-h" class="fade">Tell us where the plan breaks.</h2>
+      <p class="lead fade">Five questions. We read every application and reply personally.</p>
+
+      <form id="apply-form" class="fade" novalidate>
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+        </div>
+        <div class="field">
+          <label for="f-brand">Brand name</label>
+          <input id="f-brand" name="brand" type="text" autocomplete="organization" required>
+        </div>
+        <div class="field">
+          <label for="f-rev">Annual revenue band</label>
+          <select id="f-rev" name="revenue_band" required>
+            <option value="" selected disabled>Select a band</option>
+            <option>Under €500K</option>
+            <option>€500K to €1M</option>
+            <option>€1M to €2.5M</option>
+            <option>€2.5M to €5M</option>
+            <option>€5M to €10M</option>
+            <option>Over €10M</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-pain">Biggest planning headache</label>
+          <textarea id="f-pain" name="biggest_planning_headache" required></textarea>
+          <span class="hint">A sentence or two is plenty.</span>
+        </div>
+        <button class="btn" type="submit">Apply for the pilot</button>
+        <p id="form-msg" class="msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="wordmark" href="#top" aria-label="ri:think home">ri<span class="colon">:</span>think</a>
+      <p style="margin-top:12px;color:var(--muted)">Business planning for early-stage CPG founders.</p>
+    </div>
+    <div class="cols">
+      <span><span class="ph">hello@rithink.io</span></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  /* Set this to your form service URL (Formspree, Basin, your own endpoint) before launch. */
+  var FORM_ENDPOINT = "[FORM ENDPOINT]";
+
+  /* Subtle fade-in: items below the fold start hidden, with a safety reveal so nothing is stranded. */
+  var els = Array.prototype.slice.call(document.querySelectorAll('.fade'));
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window) {
+    var vh = window.innerHeight;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.remove('pre'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function (el) {
+      if (el.getBoundingClientRect().top > vh) { el.classList.add('pre'); io.observe(el); }
+    });
+    setTimeout(function () { els.forEach(function (el) { el.classList.remove('pre'); }); }, 6000);
+  }
+
+  var form = document.getElementById('apply-form');
+  var msg = document.getElementById('form-msg');
+  function say(text, cls) { msg.textContent = text; msg.className = 'msg ' + (cls || ''); }
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    say('');
+    var fields = ['f-name', 'f-email', 'f-brand', 'f-rev', 'f-pain'];
+    for (var i = 0; i < fields.length; i++) {
+      var f = document.getElementById(fields[i]);
+      if (!f.value.trim()) {
+        say('Please fill in every field. "' + document.querySelector('label[for="' + fields[i] + '"]').textContent + '" is empty.', 'err');
+        f.focus(); return;
+      }
+    }
+    var email = document.getElementById('f-email');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+      say('That email address does not look right. Please check it.', 'err');
+      email.focus(); return;
+    }
+    if (!/^https?:\/\//.test(FORM_ENDPOINT)) {
+      say('Applications are not switched on yet. Please email hello@rithink.io instead.', 'err');
+      return;
+    }
+    var btn = form.querySelector('button[type=submit]');
+    btn.disabled = true;
+    fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    }).then(function (r) {
+      if (!r.ok) throw new Error('bad status');
+      form.reset();
+      say('Thanks. Your application is in, and we will reply personally.', 'ok');
+    }).catch(function () {
+      say('That did not send. Please try again, or email hello@rithink.io.', 'err');
+    }).then(function () { btn.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>
